@@ -6,6 +6,8 @@
  */
 package com.netease.order.controller;
 
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +31,8 @@ public class OrderController {
     public String rollBackStock(
         @RequestParam(value = "skuId", required = true) long skuId) {
 
-        kafkaTemplate.send("order-cancel", String.valueOf(skuId));
+        kafkaTemplate.send("order-cancel",
+            String.valueOf(skuId) + "-" + UUID.randomUUID());
 
         return "success";
     }
