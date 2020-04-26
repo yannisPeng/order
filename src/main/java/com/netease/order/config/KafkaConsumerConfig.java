@@ -24,8 +24,8 @@ import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 /**
  * @author 彭羽(pengyu @ .corp.netease.com)
  */
-@Configuration
-@EnableKafka
+//@Configuration
+//@EnableKafka
 public class KafkaConsumerConfig {
 
     @Value("${kafka.consumer.servers}")

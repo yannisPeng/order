@@ -20,7 +20,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * @Date 2020/1/28 9:58
  * @Version v1.0
  */
-@Configuration
+//@Configuration
 public class RedisTemplateConfig {
 
     private RedisTemplate redisTemplate;

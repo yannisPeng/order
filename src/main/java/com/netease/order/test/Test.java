@@ -6,10 +6,17 @@
  */
 package com.netease.order.test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.swing.plaf.synth.SynthTextAreaUI;
@@ -28,24 +35,20 @@ import com.netease.order.po.Teacher;
  */
 public class Test {
 
-
-    private AtomicInteger atomicInteger = new AtomicInteger(10);
-
-    public int add(){
-        return atomicInteger.addAndGet(1);
+    public static void main(String[] args) throws ParseException {
+        Stack<String> stack = new Stack();
+        stack.push("1");
+        System.out.println(stack.toString());
     }
 
-    public static void main(String[] args) {
-
-        Student student = new Student();
-        student.setName("张三");
-        Optional<String> optional = Optional.ofNullable(student.getName());
-        if(optional.isPresent()){
-            System.out.println("存在");
+    public static boolean valid(Collection<? extends String> col) {
+        Iterator iterator = col.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next() == null) {
+                return true;
+            }
         }
-        String name = optional.get();
-        System.out.println(name);
-
+        return false;
     }
 
 }
